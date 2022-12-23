@@ -1,0 +1,24 @@
+{% extends 'main_base.html'%}
+
+{% block title %}profile{% endblock %}
+
+{% block content%}
+<h1 class="text-center">My Profile</h1>
+    <table class="container table table-dark table-stripped text-center">
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE NO.</th>
+        <tr>
+        {% for i in  form %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phno}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="container d-flex justify-content-end">
+        <a href={% url 'editprofile' %} class="btn btn-outline-dark">Edit Profile</a>
+    </div>
+{% endblock%}

@@ -1,0 +1,21 @@
+{% extends 'main_base.html'%}
+
+{% block title %}enquiry{% endblock %}
+
+{% block content%}
+<h1 class="text-center">Enquiry Details</h1>
+    <table class="container table table-dark table-stripped text-center">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        <tr>
+        {% for i in form %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phno}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

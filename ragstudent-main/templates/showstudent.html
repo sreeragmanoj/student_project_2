@@ -1,0 +1,30 @@
+{% extends 'main_base.html'%}
+
+{% block title %}student{% endblock %}
+
+{% block content%}
+<h1 class="text-center">Student Details</h1>
+    <table class="container table table-dark table-stripped text-center">
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE NUMBER</th>
+            <th>ADDRESS</th>
+            <th>PLACE<th>
+            <th></th>
+            <th></th>
+        <tr>
+        {% for i in form  %}
+        <tr>
+            <td>{{i.student_name}}</td>
+            <td>{{i.student_email}}</td>
+            <td>{{i.student_phone}}</td>
+            <td>{{i.student_address}}</td>
+            <td>{{i.student_place}}</td>
+            <td><a href="{% url 'edit'%}?edit={{i.student_id}}" class="btn btn-outline-light btn-lg">Edit</a></td>
+            <td><a href="{% url 'delete'%}?delete={{i.student_id}}" class="btn btn-outline-light btn-lg">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock%}

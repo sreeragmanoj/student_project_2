@@ -1,0 +1,338 @@
+{%extends 'base.html'%}
+
+{% block title %}Course Details{% endblock title %}
+
+ {%block content%}
+
+
+ <style>
+
+.cardcourse
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+     flex-direction: row;  
+     flex-wrap:wrap;
+    /* gap: 30px; */
+    background: #222327;
+}
+.card
+{
+    position: relative;
+    width: 350px;
+    height: 150px;
+    background: #333;
+    transition: 0.5s;
+    margin:30px;
+    margin-top:50px;
+
+}
+
+.card:hover
+{
+    height: 450px;
+}
+
+.card .lines
+{
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+.card .lines::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#45f3ff,
+    #45f3ff,#45f3ff,transparent);
+    animation: animate10 4s linear infinite;
+}
+
+@keyframes animate10
+{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.card .lines::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+
+.card .imgBx
+{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.card:hover .imgBx
+{
+    width: 250px;
+    height: 250px;
+
+
+}
+
+.card .imgBx::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(transparent,#ff3c7b,
+    #ff3c7b,#ff3c7b,transparent);
+    animation: animate11 6s linear infinite;
+
+}
+
+
+@keyframes animate11
+{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+
+.card .imgBx::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+
+.card .imgBx img
+{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+
+
+}
+
+.card .content
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card .content .details{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(145px);
+}
+
+.card:hover .content .details
+{
+    transform: translateY(0px);
+
+}
+
+.card .content .details h4{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #45f3ff;
+    line-height: 1.2em;
+}
+.card .content .details h4 span
+{
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #fff;
+}
+
+.card .content .details .data
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 1px 0;
+}
+
+.card .content .details .data h3{
+    font-size: 1em;
+    color: #45f3ff;
+    line-height: 1.2em;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.card .content .details .data h3 span
+{
+    font-size: 0.85em;
+    font-weight: 400;
+    color: #fff;
+}
+.card .content .details .actionBtn
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card .content .details .actionBtn button
+{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    background: #45f3ff;
+    color: #222;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card .content .details .actionBtn button:nth-child(2)
+{
+    background: #fff;
+
+}
+
+.card .content .details .actionBtn button:hover
+{
+    opacity: 1;
+}
+
+.grcard{
+    background:white;
+}
+
+ </style>
+
+
+ <div class="cardcourse">
+    
+    <div class="card">
+        <div class="lines"></div>
+        <div class="imgBx">
+            <img class="card-imag " src="https://luminartechnolabbucket.s3.ap-south-1.amazonaws.com/fe964743-1e77-427b-aab2-274f850b0e70-asset-1.svg" alt="machine-learning">
+        </div>
+        <div class="content">
+            <div class="details">
+                <h4>Software Testing Specialist</h4>
+                <div class="data">
+                    <h3>Manual Testing , Java foundations, Mobile Testing, Automation Testing, Selenium IDE, Selenium Web driver, Selenium Advanced</h3>
+                </div>
+                <div class="actionBtn">
+                    <button>40000</button>
+                    <button>4 Month</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="card">
+        <div class="lines"></div>
+        <div class="imgBx">
+            <img class="card-imag " src="https://luminartechnolabbucket.s3.ap-south-1.amazonaws.com/c678b72e-d125-46c0-8598-30c0f1989d2b-Group%201.svg" alt="machine-learning">
+        </div>
+        <div class="content">
+            <div class="details">
+                <h4>MEA(R)N Stack Web Development Expert - Angular & React</h4>
+                <div class="data">
+                    <h3>HTML, CSS, Bootstrap, Javascript, Typescript, Git, Angular, React.js,</h3>
+                </div>
+                <div class="actionBtn">
+                    <button>41000</button>
+                    <button>4 months</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="card">
+        <div class="lines"></div>
+        <div class="imgBx">
+            <img class="card-imag " src="https://luminartechnolabbucket.s3.ap-south-1.amazonaws.com/b329bfb7-fbc1-4623-bfa2-1ee94814efe4-asset-2.svg" alt="machine-learning">
+        </div>
+        <div class="content">
+            <div class="details">
+                <h4>Data Science - ML - AI - Big Data with Cloud & TABLEAU</h4>
+                <div class="data">
+                    <h3>Python, Hadoop, Spark, Data Analytics, Linear Algebra, Statistics.</h3>
+                </div>
+                <div class="actionBtn">
+                    <button>61000</button>
+                    <button>6 months</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+ </div>
+ <div class="cardcourse">
+    {% for d in crs %}
+    <div class="card">
+        <div class="lines"></div>
+        <div class="imgBx">
+            <img class="card-imag " src="https://luminartechnolabbucket.s3.ap-south-1.amazonaws.com/fe964743-1e77-427b-aab2-274f850b0e70-asset-1.svg" alt="machine-learning">
+        </div>
+        <div class="content">
+            <div class="details">
+                <h4>{{d.name}}</h4>
+                <div class="data">
+                    <h3>{{d.description}}</h3>
+                </div>
+                <div class="actionBtn">
+                    <button>rs {{d.fee}}</button>
+                    <button> {{d.duration}} Month</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    {% endfor %}
+   
+ </div>
+
+
+
+
+{%endblock content%}
+        

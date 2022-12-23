@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title %}departments{% endblock %}
+
+{% block content%}
+
+<style>
+    background:white;
+</style>
+
+<h1 class="text-center">Our Departments</h1>
+<hr>
+
+{% for d in crs %}
+<div class=" mx-auto w-50 bg-success text-center text-white p-3 my-5 border-warning rounded">
+    
+    <h1>{{d.name}}</h1>
+    {% comment %} <img src="{{d.dep_image.url}}"> {% endcomment %}
+    <p>{{d.description}}</P>
+    <p> Duration : {{d.duration}} </p>
+    <p> fee : {{d.fee}} </p>
+
+</div>
+{% endfor %}
+
+{% endblock %}
